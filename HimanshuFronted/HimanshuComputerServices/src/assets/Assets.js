@@ -1,0 +1,21 @@
+import Cart from "./Cart.png"
+import list from "./list.png"
+import user from "./user.png"
+import back from "./Down.png"
+import logo from "./logo.jpg"
+import menu from "./menu.png"
+import search from "./search.png"
+import exchange from "./exchange.png"
+import support from "./Support.png"
+import service from "./service.png"
+import cross from "./cross.png"
+import deleteIcon from  "./delete.png"
+import Dell from "./Dell.jpg"
+import hp from "./hp.jpg"
+import leno from "./leno.jpg"
+import mac from "./mac.jpg"
+import acer from "./acer.jpg"
+import map from "./map.png"
+export const assets={
+    Cart,user,list, back,logo,menu,search,exchange,service,support,cross,deleteIcon,Dell,hp,leno,mac,acer,map
+}
