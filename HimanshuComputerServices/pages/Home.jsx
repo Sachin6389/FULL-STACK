@@ -1,6 +1,6 @@
 import React from "react";
-import LatestCollation from "../components/LatestCollation";
-import Collection from "./Collection";
+import LatestCollation from "../components/LatestCollation.jsx";
+import Collection from "./Collection.jsx";
 
 function Home() {
   return (
