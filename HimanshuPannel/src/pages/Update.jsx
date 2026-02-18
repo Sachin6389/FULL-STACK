@@ -105,25 +105,28 @@ function Update({ token }) {
     }
   };
 
-  return (
-    <div className="w-full min-h-screen bg-gray-100 px-6 py-6">
-      <h2 className="mb-6 text-3xl font-bold text-gray-800">
+ return (
+  <div className="w-full min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-10">
+    <div className="max-w-6xl mx-auto">
+      
+      <h2 className="mb-8 text-2xl sm:text-3xl font-bold text-gray-800">
         Update Product
       </h2>
 
       <form
         onSubmit={handleSubmit}
-        className="w-full rounded-lg bg-white p-6 shadow-md"
+        className="bg-white rounded-2xl shadow-md p-6 sm:p-8"
       >
-        {/* ------------------ BASIC DETAILS ------------------ */}
-        <h3 className="mb-4 text-lg font-semibold text-gray-700">
+        {/* ================= PRODUCT DETAILS ================= */}
+        <h3 className="mb-6 text-lg font-semibold text-gray-700 border-b pb-2">
           Product Details
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
           {/* Product Name */}
           <div>
-            <label className="mb-1 block text-sm font-medium text-gray-700">
+            <label className="block mb-2 text-sm font-medium text-gray-600">
               Product Name
             </label>
             <input
@@ -131,14 +134,14 @@ function Update({ token }) {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full rounded-md border px-4 py-2"
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
 
           {/* Company Name */}
           <div>
-            <label className="mb-1 block text-sm font-medium text-gray-700">
+            <label className="block mb-2 text-sm font-medium text-gray-600">
               Company Name
             </label>
             <input
@@ -146,14 +149,14 @@ function Update({ token }) {
               name="companyName"
               value={formData.companyName}
               onChange={handleChange}
-              className="w-full rounded-md border px-4 py-2"
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
 
           {/* Price */}
           <div>
-            <label className="mb-1 block text-sm font-medium text-gray-700">
+            <label className="block mb-2 text-sm font-medium text-gray-600">
               Price
             </label>
             <input
@@ -161,41 +164,44 @@ function Update({ token }) {
               name="price"
               value={formData.price}
               onChange={handleChange}
-              className="w-full rounded-md border px-4 py-2"
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
 
           {/* Description */}
           <div className="md:col-span-2">
-            <label className="mb-1 block text-sm font-medium text-gray-700">
+            <label className="block mb-2 text-sm font-medium text-gray-600">
               Description
             </label>
             <textarea
               name="description"
               value={formData.description}
               onChange={handleChange}
-              rows="3"
-              className="w-full rounded-md border px-4 py-2"
+              rows="4"
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
         </div>
 
-        {/* ------------------ IMAGES ------------------ */}
-        <h3 className="mt-10 mb-4 text-lg font-semibold text-gray-700">
+        {/* ================= PRODUCT IMAGES ================= */}
+        <h3 className="mt-10 mb-6 text-lg font-semibold text-gray-700 border-b pb-2">
           Product Images
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { key: "top", label: "Top Image" },
             { key: "bottom", label: "Bottom Image" },
             { key: "front", label: "Front Image" },
             { key: "back", label: "Back Image" },
           ].map(({ key, label }) => (
-            <div key={key}>
-              <label className="mb-2 block text-sm font-medium text-gray-700">
+            <div
+              key={key}
+              className="border rounded-xl p-4 bg-gray-50 hover:shadow-md transition"
+            >
+              <label className="block mb-3 text-sm font-medium text-gray-600">
                 {label}
               </label>
 
@@ -204,42 +210,43 @@ function Update({ token }) {
                 name={key}
                 accept="image/*"
                 onChange={handleImageChange}
-                className="w-full"
-                required
-                
+                className="w-full text-sm"
               />
 
               {preview[key] && (
                 <img
                   src={preview[key]}
                   alt={label}
-                  className="mt-3 h-40 w-full rounded-md border object-cover"
+                  className="mt-4 h-36 w-full rounded-lg border object-cover"
                 />
               )}
             </div>
           ))}
         </div>
 
-        {/* ------------------ ACTION BUTTONS ------------------ */}
-        <div className="mt-10 flex gap-4">
+        {/* ================= BUTTONS ================= */}
+        <div className="mt-10 flex flex-col sm:flex-row gap-4">
           <button
             type="button"
             onClick={() => navigate("/products")}
-            className="w-full rounded-md bg-gray-300 px-6 py-3 font-semibold hover:bg-gray-400"
+            className="w-full sm:w-auto flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 py-3 rounded-lg font-semibold transition"
           >
             Cancel
           </button>
 
           <button
             type="submit"
-            className="w-full rounded-md bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700"
+            className="w-full sm:w-auto flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition"
           >
             Update Product
           </button>
         </div>
+
       </form>
     </div>
-  );
+  </div>
+);
+
 }
 
 export default Update;
