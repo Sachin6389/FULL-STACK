@@ -1,4 +1,4 @@
-function Home() {
+function Home( { token } ) {
   return (
     <div className="flex items-center justify-center min-h-[70vh] px-4">
       

@@ -45,7 +45,7 @@ function App() {
             <div className="flex-1 p-4 sm:p-6 lg:p-8">
               <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 min-h-[80vh]">
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<Home token={token} />} />
 
                   <Route path="/add" element={<Add token={token} />} />
                   <Route path="/products" element={<List token={token} />} />
