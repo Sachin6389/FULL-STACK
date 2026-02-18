@@ -9,6 +9,7 @@ import Update from "./pages/Update.jsx";
 import Order from "./pages/Order.jsx";
 import Login from "./components/Login.jsx";
 import { ToastContainer } from "react-toastify";
+import Home from "./pages/Home.jsx";
 
 function App() {
   const [token, settoken] = useState(
@@ -44,6 +45,8 @@ function App() {
             <div className="flex-1 p-4 sm:p-6 lg:p-8">
               <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 min-h-[80vh]">
                 <Routes>
+                  <Route path="/" element={<Home />} />
+
                   <Route path="/add" element={<Add token={token} />} />
                   <Route path="/products" element={<List token={token} />} />
                   <Route path="/update" element={<Update token={token} />} />
