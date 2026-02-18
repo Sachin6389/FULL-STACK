@@ -1,14 +1,14 @@
 import { useState ,useEffect} from 'react'
 import  {useDispatch,useSelector} from 'react-redux'
 import './App.css'
-import SearchBAr from '../Componet/SearchBAr.jsx'
+import SearchBAr from '../components/SearchBAr.jsx'
 
-import {Header,Fottar}from '../Componet/index.js'
+import {Header,Fottar}from '../components/index.js'
 import { Outlet } from 'react-router-dom'
 import axios from 'axios'
 import { logout } from  "../Storage/auth.js";
 import { login as authLogin } from  "../Storage/auth.js";
-import ScrollToTop from '../Componet/ScrollToTop.jsx';
+import ScrollToTop from '../components/ScrollToTop.jsx';
 function App() {
   const dispatch = useDispatch();
   

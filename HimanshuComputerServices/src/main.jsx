@@ -11,18 +11,18 @@ import EditProfile from '../pages/EditProfile.jsx'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider,createBrowserRouter } from 'react-router-dom'
 import Home from '../pages/Home.jsx'
-import { Login } from "../Componet/index.js"
-import AuthLayout from '../Componet/Protector/AuthLayout.jsx'
+import { Login } from "../components/index.js"
+import AuthLayout from "../components/Protector/AuthLayout.jsx"
 import About from '../pages/About.jsx'
-import Signup from '../Componet/Signup.jsx'
+import Signup from '../components/Signup.jsx'
 import Contact from '../pages/Contact.jsx'
 import Product from '../pages/Product.jsx'
 import Carts from '../pages/Carts.jsx'
 import OrderPlace from '../pages/OrderPlace.jsx'
 import Order from '../pages/Order.jsx'
 import Collection from '../pages/Collection.jsx'
-import SearchBAr from '../Componet/SearchBAr.jsx'
-import Logout from '../Componet/Header/Logout.jsx'
+import SearchBAr from '../components/SearchBAr.jsx'
+import Logout from '../components/Header/Logout.jsx'
 import Verify from '../pages/Verify.jsx'
 
 
