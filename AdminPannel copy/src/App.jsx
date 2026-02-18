@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Navebar from './componet/Navebar.jsx'
-import Sidebar from './componet/Sidebar.jsx'
+import Navebar from './components/Navebar.jsx'
+import Sidebar from './components/Sidebar.jsx'
 import { Routes,Route } from 'react-router-dom'
 import Add from './pages/Add.jsx'
 import List from './pages/List.jsx'
 import Update from './pages/Update.jsx'
 import Order from './pages/Order.jsx'
-import Login from './componet/Login.jsx'
+import Login from './components/Login.jsx'
 import { ToastContainer } from 'react-toastify'
 
 function App() {
