@@ -8,16 +8,17 @@ import { fetchProducts } from "../Storage/Product.js";
 
 function Product() {
   const dispatch = useDispatch();
-   useEffect(() => {
-      dispatch(fetchProducts());
-    }, [dispatch]);
-  const { productId } = useParams();
-  
 
-  const { productList, loading, error } = useSelector((state) => state.product);
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
+  const { productId } = useParams();
+
+  const { productList, loading, error } = useSelector(
+    (state) => state.product
+  );
   const currency = useSelector((state) => state.product.currency);
-  
-  
 
   const [cartData, setCartData] = useState([]);
   const [productData, setProductData] = useState(null);
@@ -57,10 +58,14 @@ function Product() {
 
   const { FrontImage, BackImage, TopImage, BottomImage } = productData || {};
 
-  if (loading) return <div className="text-center py-20">Loading...</div>;
+  if (loading)
+    return <div className="text-center py-20">Loading...</div>;
+
   if (error)
     return (
-      <div className="text-center py-20 text-red-500">Error: {error}</div>
+      <div className="text-center py-20 text-red-500">
+        Error: {error}
+      </div>
     );
 
   if (!productData)
@@ -74,8 +79,21 @@ function Product() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
       <div className="flex flex-col lg:flex-row gap-10">
 
-        {/* Image Thumbnails */}
-        <div className="flex lg:flex-col gap-3 overflow-x-auto lg:overflow-y-scroll w-full lg:w-[15%] px-2">
+        {/* Thumbnails */}
+        <div
+          className="
+          flex 
+          lg:flex-col 
+          gap-3 
+          overflow-x-auto 
+          lg:overflow-y-auto 
+          lg:overflow-x-hidden
+          w-full 
+          lg:w-[120px] 
+          max-h-[450px] 
+          pr-2
+        "
+        >
           {[FrontImage, BackImage, TopImage, BottomImage]
             .filter(Boolean)
             .map((img, idx) => (
@@ -83,20 +101,35 @@ function Product() {
                 key={idx}
                 src={img}
                 alt={`${productData?.name || "Product"} ${idx + 1}`}
-                className={`cursor-pointer rounded-lg border p-1 hover:scale-105 transition-transform ${
-                  image === img ? "border-black" : "border-gray-300"
-                }`}
+                className={`
+                  min-w-[80px] 
+                  lg:min-w-full
+                  h-[80px]
+                  lg:h-[100px]
+                  object-cover
+                  cursor-pointer 
+                  rounded-lg 
+                  border 
+                  p-1 
+                  transition-all 
+                  duration-200 
+                  ${
+                    image === img
+                      ? "border-black scale-105"
+                      : "border-gray-300 hover:scale-105"
+                  }
+                `}
                 onClick={() => setImage(img)}
               />
             ))}
         </div>
 
         {/* Main Image */}
-        <div className="w-full lg:w-[50%] flex justify-center items-center max-h-min">
+        <div className="w-full lg:w-[50%] flex justify-center items-start lg:sticky lg:top-20">
           <img
             src={image}
             alt={productData?.name || "Product Image"}
-            className="rounded-xl shadow-lg object-contain"
+            className="rounded-xl shadow-lg object-contain max-h-[500px]"
           />
         </div>
 
@@ -129,17 +162,21 @@ function Product() {
           </p>
 
           {/* Description */}
-          <p className="text-gray-600 mt-4">{productData.description}</p>
+          <p className="text-gray-600 mt-4">
+            {productData.description}
+          </p>
 
           {/* Add to Cart */}
           <button
-            onClick={() => addToCart(productData._id, productData.price)}
+            onClick={() =>
+              addToCart(productData._id, productData.price)
+            }
             className="mt-6 bg-black text-white px-8 py-3 rounded-xl font-medium hover:bg-gray-800 transition"
           >
             Add to Cart
           </button>
 
-          {/* Additional Info */}
+          {/* Extra Info */}
           <div className="mt-6 text-gray-700 text-sm flex flex-col gap-1">
             <p>✅ 100% Original product</p>
             <p>💵 Cash on delivery available</p>
@@ -150,7 +187,9 @@ function Product() {
 
       {/* Related Products */}
       <div className="mt-14">
-        <h2 className="text-2xl font-semibold mb-4">Related Products</h2>
+        <h2 className="text-2xl font-semibold mb-4">
+          Related Products
+        </h2>
         <RelatedProduct category={productData.companyName} />
       </div>
     </div>
