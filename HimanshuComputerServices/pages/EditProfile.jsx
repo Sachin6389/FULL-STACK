@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Logo, CommonButton, Input } from "../Componet";
+import { Logo, CommonButton, Input } from "../components/index.js";
 import { useSelector, useDispatch } from "react-redux";
 import { login } from "../Storage/auth.js";
 import axios from "axios";

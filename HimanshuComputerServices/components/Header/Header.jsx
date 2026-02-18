@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Logo, Logout } from "../index";
+import { Container, Logo, Logout } from "../index.js";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { assets } from "../../src/assets/Assets.js";

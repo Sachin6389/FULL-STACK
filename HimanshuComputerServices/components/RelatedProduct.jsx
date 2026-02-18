@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ProductDisplay from "./ProductDisplay";
-import Tittle from "./Tittle";
+import ProductDisplay from "./ProductDisplay.jsx";
+import Tittle from "./Tittle.jsx";
 import { useSelector } from "react-redux";
 
 function RelatedProduct({ category }) {

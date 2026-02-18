@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { addtocart as addToCartAction } from "../Storage/Product";
 import { assets } from "../src/assets/Assets";
-import RelatedProduct from "../Componet/RelatedProduct";
+import RelatedProduct from "../components/RelatedProduct.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../Storage/Product.js";
 

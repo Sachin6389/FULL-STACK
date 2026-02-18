@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import Axios from "axios";
-import Tittle from "../Componet/Tittle.jsx";
+import Tittle from "../components/Tittle.jsx";
 import { fetchProducts } from "../Storage/Product.js";
 
 function Order() {

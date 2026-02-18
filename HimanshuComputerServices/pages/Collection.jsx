@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { assets } from "../src/assets/Assets.js";
 import { useSelector, useDispatch } from 'react-redux';
-import Tittle from '../Componet/Tittle.jsx';
-import ProductDisplay from '../Componet/ProductDisplay.jsx';
+import Tittle from '../components/Tittle.jsx';
+import ProductDisplay from '../components/ProductDisplay.jsx';
 import { fetchProducts } from "../Storage/Product.js";
 
 function Collection() {

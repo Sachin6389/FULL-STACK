@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { TottalAmounts } from "../Storage/Product.js";
-import Tittle from "../Componet/Tittle";
+import Tittle from "../components/Tittle.jsx";
 import { useNavigate } from "react-router-dom";
 
 

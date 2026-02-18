@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login as authLogin } from "../Storage/auth.js";
-import { CommonButton, Input, Logo } from "./index";
+import { CommonButton, Input, Logo } from "./index.js";
 import { useDispatch } from "react-redux";
 
 import { useForm } from "react-hook-form";

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import ProductDisplay from "../Componet/ProductDisplay"
-import Tittle from '../Componet/Tittle'
+import ProductDisplay from "../components/ProductDisplay.jsx"
+import Tittle from '../components/Tittle.jsx'
 
 function LatestCollation() {
     const[letest,setletest]=useState([])

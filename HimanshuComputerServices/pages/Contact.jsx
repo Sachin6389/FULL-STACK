@@ -1,5 +1,5 @@
 import React from 'react'
-import Tittle from '../componet/Tittle'
+import Tittle from '../components/Tittle.jsx'
 import { Link } from 'react-router-dom'
 import { assets } from '../src/assets/Assets.js'
 

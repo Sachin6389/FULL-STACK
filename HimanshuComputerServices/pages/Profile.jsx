@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Logo, CommonButton } from "../Componet";
+import { Logo, CommonButton } from "../components/index.js";
 import { assets } from "../src/assets/Assets";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
