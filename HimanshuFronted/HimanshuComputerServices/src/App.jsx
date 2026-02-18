@@ -8,6 +8,7 @@ import { Outlet } from 'react-router-dom'
 import axios from 'axios'
 import { logout } from  "../Storage/auth.js";
 import { login as authLogin } from  "../Storage/auth.js";
+import ScrollToTop from '../Componet/ScrollToTop.jsx';
 function App() {
   const dispatch = useDispatch();
   
@@ -77,6 +78,7 @@ function App() {
   return (
     <div className='min-h-screen flex flex-wrap content-between bg-gray-400'><div
     className='w-full block'>
+      <ScrollToTop />
       <Header/>
       <SearchBAr/>
       

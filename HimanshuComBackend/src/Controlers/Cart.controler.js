@@ -10,14 +10,19 @@ import mongoose from "mongoose"
 const addToCart = asyncHandler(async (req, res) => {
   const userId = req.user._id;
   let { productId, quantity } = req.body;
+  
+  
 
   if (Array.isArray(productId)) productId = productId[0];
+  if (Array.isArray(quantity)) quantity = quantity[0];
 
   if (!mongoose.Types.ObjectId.isValid(productId)) {
     throw new ApiError(400, "Invalid product ID");
   }
 
   quantity = Number(quantity); // 🔥 IMPORTANT
+  
+  
 
   if (!quantity || isNaN(quantity) || quantity <= 0) {
     throw new ApiError(400, "Quantity must be greater than 0");

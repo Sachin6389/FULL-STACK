@@ -151,7 +151,7 @@ function Product() {
       {/* Related Products */}
       <div className="mt-14">
         <h2 className="text-2xl font-semibold mb-4">Related Products</h2>
-        <RelatedProduct category={productData.category} />
+        <RelatedProduct category={productData.companyName} />
       </div>
     </div>
   );

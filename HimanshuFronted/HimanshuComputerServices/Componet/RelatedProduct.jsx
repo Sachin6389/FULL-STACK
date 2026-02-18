@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 
 function RelatedProduct({ category }) {
   const { productList, loading } = useSelector((state) => state.product);
+  console.log(category);
+  
   
   
 
@@ -13,7 +15,7 @@ function RelatedProduct({ category }) {
   useEffect(() => {
     if (productList && category) {
       let filtered = productList.filter(
-        (item) => item.category === category
+        (item) => item.companyName === category
       );
 
       setRelated(filtered.slice(0, 5));

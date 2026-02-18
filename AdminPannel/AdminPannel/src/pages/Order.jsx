@@ -20,15 +20,19 @@ function Order({ token }) {
           token: token,
         },
       });
+      console.log(response);
+      
 
       if (response.data?.success) {
         setOrders(response.data.massage.reverse() || []);
         toast.success(response.data.data);
       }
     } catch (err) {
+      console.log(err);
+      
       setError("Error fetching orders");
-      toast.error(error.response.data.massage
-);
+      toast.error(err.response?.data?.massage || "Failed to fetch orders");
+
     } finally {
       setLoading(false);
     }

@@ -27,13 +27,19 @@ function Collection() {
   // ✅ Update filter list whenever products change
   useEffect(() => {
     setFilterProduct(product);
-  }, [product]);
+  }, [product , setFilterProduct]);
 
   // ✅ Category toggle function
   const toggleCategory = (e) => {
     const value = e.target.value;
+    
+    
     if (category.includes(value)) {
+        
+
       setCategory((prev) => prev.filter((item) => item !== value));
+      
+      
     } else {
       setCategory((prev) => [...prev, value]);
     }
@@ -50,12 +56,20 @@ function Collection() {
     }
 
     if (category.length > 0) {
+      console.log(category);
+      
       productCopy = productCopy.filter((item) =>
-        category.includes(item.category)
+        
+        
+        category.includes(item.companyName.toLowerCase())
       );
     }
+    
+    
 
     setFilterProduct(productCopy);
+    
+    
   };
 
   // ✅ Sort products
