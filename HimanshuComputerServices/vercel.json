@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "https://himanshubackend.onrender.com/:path*"
+      "source": "/api/(.*)",
+      "destination": "https://api.himanshucomputerservices.com/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
