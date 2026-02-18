@@ -1,7 +1,7 @@
 import React from 'react'
 
 import LatestCollation from '../components/LatestCollation.jsx'
-import Collection from './Collection'
+import Collection from './Collection.jsx'
 import { useLocation } from 'react-router-dom'
 
 
