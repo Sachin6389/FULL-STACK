@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import CartTottal from "../componet/CartTottal";
-import Tittle from "../Componet/Tittle";
+import CartTottal from "../components/CartTottal.jsx";
+import Tittle from "../components/Tittle.jsx";
 import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
