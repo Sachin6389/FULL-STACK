@@ -353,7 +353,7 @@ const updatedAvatarImage = asyncHandler(async (req, res) => {
     ).select("-password");
     return res
       .status(200)
-      .json(new Apiresponse(200, user, "Avatar image updated successfully"));
+      .json(new Apiresponse(200, { user: user }, "Avatar image updated successfully"));
   } catch (error) {
     const status = error.statusCode || 500;
     return res
