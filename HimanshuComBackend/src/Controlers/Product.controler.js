@@ -66,10 +66,10 @@ const addProduct = asyncHandler(async (req, res) => {
     description,
     price: Number(price),
     companyName,
-    TopImage: TopImage.url,
-    BottomImage: BottomImage.url,
-    FrontImage: FrontImage.url,
-    BackImage: BackImage.url,
+    TopImage: TopImage.secure_url,
+    BottomImage: BottomImage.secure_url,
+    FrontImage: FrontImage.secure_url,
+    BackImage: BackImage.secure_url,
   });
   if (!productCreate) {
      return res .status(400).json(new Apiresponse(400, "Something went wrong when creating  product"));
@@ -216,10 +216,10 @@ const UpdateProduct = asyncHandler(async (req, res) => {
         description,
         price:Number(price),
         companyName,
-        TopImage:TopImage.url,
-        BottomImage:BackImage.url,
-        FrontImage:FrontImage.url,
-        BackImage:BackImage.url
+        TopImage:TopImage.secure_url,
+        BottomImage:BackImage.secure_url,
+        FrontImage:FrontImage.secure_url,
+        BackImage:BackImage.secure_url
 
     },
     {
