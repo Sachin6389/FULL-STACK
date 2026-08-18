@@ -81,7 +81,7 @@ function EditProfile() {
       const formData = new FormData();
       formData.append("avatar", resizedFile); // 🔥 name MUST match multer
 
-      await axios.patch(
+       const response = await axios.patch(
         import.meta.env.VITE_BACKEND_URL_LOGIN + "/avatar",
         formData,
         {
@@ -90,6 +90,9 @@ function EditProfile() {
           },
         }
       );
+      const updatedUser = response.data.massage;
+
+      dispatch(login(updatedUser));
 
       setMessage("✅ Avatar updated successfully");
     } catch (err) {
