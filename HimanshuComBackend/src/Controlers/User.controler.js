@@ -73,7 +73,7 @@ const registerUser = asyncHandler(async (req, res) => {
     }
     const user = await User.create({
       fullName,
-      avatar: avatar.url,
+      avatar: avatar.secure_url,
       email,
       password,
       address: address.toLowerCase(),
@@ -344,7 +344,7 @@ const updatedAvatarImage = asyncHandler(async (req, res) => {
       req.user?._id,
       {
         $set: {
-          avatar: newavatar.url,
+          avatar: newavatar.secure_url,
         },
       },
       {
